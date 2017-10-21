@@ -1,0 +1,31 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<table style="width:100%">
+  <tr>
+    <th> Date </th>
+    <th> Humidity </th>
+    <th> Temperature </th>
+  </tr>
+  {% for object in object_list %}
+  <tr>
+    <td> {{ object.date }} </td>
+    <td> {{ object.humidity }} </td>
+    <td> {{ object.temperature }} </td>
+  </tr>
+  {% endfor %}
+</table>
