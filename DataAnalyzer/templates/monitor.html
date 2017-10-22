@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}" ></script>
+        <title>GreenHouse</title>
+    </head>
+    <body>
+        <h1>GreenHouse </h1>
+        {% include 'list_view.html' %}
+
+        <script>
+        function refresh() {
+            $.ajax({
+                url: {% url 'list_view' %},
+                success: function(data) {
+                    $('#test').html(data);
+                }
+            });
+            setInterval("refresh()", 5000);
+        }
+        $(function(){
+            refresh();
+        });
+        </script>
+    </body>
+</html>
