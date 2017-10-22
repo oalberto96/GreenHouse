@@ -1,14 +1,18 @@
-<table id="test" style="width:100%">
-  <tr>
-    <th> Date </th>
-    <th> Humidity </th>
-    <th> Temperature </th>
-  </tr>
-  {% for data in sensor_data %}
-  <tr>
-    <td> {{ data.date }} </td>
-    <td> {{ data.humidity }} </td>
-    <td> {{ data.temperature }} </td>
-  </tr>
-  {% endfor %}
+<table id="test" class="table table-sm table-bordered table-hover">
+  <thead class="thead-dark">
+      <tr>
+        <th scope="col"> Date </th>
+        <th scope="col"> Humidity </th>
+        <th scope="col"> Temperature </th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for data in sensor_data %}
+      <tr>
+        <td> {{ data.date }} </td>
+        <td> {{ data.humidity }} </td>
+        <td> {{ data.temperature }} </td>
+      </tr>
+      {% endfor %}
+  <tbody>
 </table>
