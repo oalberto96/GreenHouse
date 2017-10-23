@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <meta http-equiv="refresh" content="1">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <script src="{% static 'js/jquery-3.2.1.min.js' %}" ></script>
         <title>GreenHouse</title>
@@ -18,7 +19,9 @@
                     <div class="card">
                       <img class="card-img-top" src="https://is.alicdn.com/img/pb/160/978/246/1273041362361_hz_fileserver2_2803397.jpg" alt="Ventilador">
                       <div class="card-body">
-                        <h4 class="card-title">Active</h4>
+                        <h4 class="card-title">
+                            {{ water }}
+                        </h4>
 
                       </div>
                     </div>
@@ -28,7 +31,7 @@
                     <div class="card">
                       <img class="card-img-top" src="http://www.ggs-greenhouse.com/images/lights.jpg" alt="Ventilador">
                       <div class="card-body">
-                        <h4 class="card-title">Active</h4>
+                        <h4 class="card-title">{{ light }}</h4>
 
                       </div>
                     </div>
@@ -38,7 +41,7 @@
                     <div class="card">
                       <img class="card-img-top" src="https://sc02.alicdn.com/kf/HTB19D8CKVXXXXbrXFXXq6xXFXXXL/JHF-40-stainless-steel-circulation-fan-for.jpg_350x350.jpg" alt="Ventilador">
                       <div class="card-body">
-                        <h4 class="card-title">Active</h4>
+                        <h4 class="card-title">{{ fan }}</h4>
 
                       </div>
                     </div>
@@ -53,20 +56,5 @@
                 </div>
             </div>
         </div>
-
-        <script>
-        function refresh() {
-            $.ajax({
-                url: {% url 'list_view' %},
-                success: function(data) {
-                    $('#test').html(data);
-                }
-            });
-            setInterval("refresh()", 5000);
-        }
-        $(function(){
-            refresh();
-        });
-        </script>
     </body>
 </html>
