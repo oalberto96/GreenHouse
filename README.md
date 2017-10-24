@@ -13,7 +13,7 @@ GreenHouse es una aplicacion basada en django, un framework
 1. Iniciar el ambiente virtual `myvenv\Scripts\activate`
 1. Descargar Django `pip install django`
 
-Dentro de la carpeta debe existir un archivo llamado `manage.py`
+Dentro del proyecto debe existir un archivo llamado `manage.py`
 
 1. Correr el comando `python manage.py makemigrations DataAnalyzer`
 1. Correr el comando `python manage.py migrate DataAnalyzer`
