@@ -51,19 +51,24 @@ def get_actuators_status_android(request):
 
 def get_actuators(query):
     actuators = {}
-    latest = query[0]
-    if latest.temperature < 25:
+    if not query:
         actuators['fan'] = "Desactivado"
-        actuators['light'] = "Activado"
-    else:
-        if latest.temperature>=25 and latest.temperature <=30:
-            actuators['fan'] = "Desactivado"
-            actuators['light'] = "Desactivado"
-        elif latest.temperature > 30:
-            actuators['fan'] = "Desactivado"
-            actuators['light'] = "Desactivado"
-    if latest.humidity < 60:
-        actuators['water'] = "Activado"
-    else:
+        actuators['light'] = "Desactivado"
         actuators['water'] = "Desactivado"
+    else:
+        latest = query[0]
+        if latest.temperature < 25:
+            actuators['fan'] = "Desactivado"
+            actuators['light'] = "Activado"
+        else:
+            if latest.temperature>=25 and latest.temperature <=30:
+                actuators['fan'] = "Desactivado"
+                actuators['light'] = "Desactivado"
+            elif latest.temperature > 30:
+                actuators['fan'] = "Desactivado"
+                actuators['light'] = "Desactivado"
+        if latest.humidity < 60:
+            actuators['water'] = "Activado"
+        else:
+            actuators['water'] = "Desactivado"
     return actuators
