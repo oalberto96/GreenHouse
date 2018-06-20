@@ -1,10 +1,20 @@
 # GreenHouse
-GreenHouse es una aplicacion basada en django, un framework 
+GreenHouse es un servidor web hecho en django para registrar temperatura y humedad de un invernadero por medio de arduino
+
+
+![Screenshot](/images/arduino.jpg)
+![Screenshot](/images/demo.png)
+
+
 
 ### Requerimientos
 
 1. Python 3.6.+
 1. Django 1.11.6
+
+### Arduino
+[Codigo para arduino](https://github.com/oalberto96/ArduinoESP8266/blob/master/Examples/SendSensorDataHttpDisplay.ino)
+
 
 ### Instalacion
 
