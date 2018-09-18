@@ -15,7 +15,6 @@ GreenHouse es un servidor web hecho en django para registrar temperatura y humed
 ### Arduino
 [Codigo para arduino](https://github.com/oalberto96/ArduinoESP8266/blob/master/Examples/SendSensorDataHttpDisplay.ino)
 
-
 ### Instalacion
 
 1. Instalar python 3.5+
